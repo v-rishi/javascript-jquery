@@ -1,0 +1,59 @@
+<!--Selct2 needs a CDN install. CDN : Content delivery network.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery-3.6.0.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <select class="basic-select-class" name="animals" style="width:50%">
+        <option value="T">Tiger</option>
+        <option value="L">Lion</option>
+        <option value="G">Giraffe</option>
+        <option value="P">Pig</option>
+        <option value="M">Monkey</option>
+    </select>
+    <div class="repeater">
+  <table border="1">
+    <thead>
+      <tr style=>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody data-repeater-list="data">
+      <tr data-repeater-item>
+        <td><input type="text" name="this_id" value="1"></td>
+        <td><input type="text" name="this_name"></td>
+      </tr>
+    </tbody>
+  </table>
+  <button data-repeater-create>Add New</button>
+</div>
+
+
+
+</body>
+<script language="javascript" type="text/javascript">
+    $(document).ready(function() {
+        $(".basic-select-class").select2();
+    });
+</script>
+<script>
+  $('.repeater').repeater();
+
+  /* Not working if use below code :
+  Reference : https://github.com/DubFriend/jquery.repeater
+
+    $('.repeater').repeater({
+      defaultValues: {
+        'this_id': '1'
+      }
+    });
+  */
+</script>
+</html>
